@@ -19,3 +19,21 @@ enum Size {
 }
 // using enum
 let mySize: Size = Size.Small;
+
+// Objects
+
+// Union type
+
+// Intersection type
+
+// Literal type:
+// to limit the value of a variable to a particular value.
+// limits the myValue to be 5 or 10.
+let myValue: 5 | 10 = 5;
+// or create a type alias
+type Values = 5 | 10;
+let myValue2: Values = 5;
+
+// Nullable type:
+
+// Optional chaining
