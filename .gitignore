@@ -1,5 +1,26 @@
-# ignore ds_store files
+
+# IDE files
+.idea/
+.vscode/
+
+# Node.js dependencies
+node_modules/
+
+# TypeScript build files
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Operating system files
 .DS_Store
 
-# ignore vscode files
-.vscode
+# Ignore virtual environment directories
+venv/
+.env/
+env/
