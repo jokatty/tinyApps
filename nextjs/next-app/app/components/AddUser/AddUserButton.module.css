@@ -1,0 +1,5 @@
+/* this module will turn into a js object. Hence the class name should be camelCase and not with hyphened */
+.buttonStyle {
+  width: 5rem;
+  background-color: aquamarine;
+}
