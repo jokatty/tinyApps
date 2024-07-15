@@ -6,7 +6,7 @@ import AddUser from './components/AddUser/AddUser';
 export default function Home() {
   return (
     <main>
-      <h1>Hello, World!</h1>
+      <h1 className='text-blue-200'>Hello, World!</h1>
       <Link href='users/newuser'>
         {' '}
         <AddUser />
