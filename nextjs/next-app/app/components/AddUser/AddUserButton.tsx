@@ -4,5 +4,10 @@ import React from 'react';
 import style from './AddUserButton.module.css';
 
 export default function AddUserButton() {
-  return <button className={style.buttonStyle}>add user</button>;
+  return (
+    <>
+      <button className={style.buttonStyle}>add user</button>
+      <button className='btn'>DaisyUI btn</button>
+    </>
+  );
 }
