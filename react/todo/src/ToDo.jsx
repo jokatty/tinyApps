@@ -1,11 +1,12 @@
 
 import {useState} from 'react';
+import EditTodoItem from './EditTodoItem'
 
 export default function ToDo(){
     const [tasks, setTasks] = useState(['interview', 'read'])
     const [newTask, setNewTask] = useState("");
     const [editingTaskId, setEditingTaskId] = useState(null);
-    const [editedText, setEditedText] = useState("");
+   
 
     function newItem(e){
         setNewTask(e.target.value)
@@ -28,24 +29,10 @@ export default function ToDo(){
         setEditingTaskId(id)
     }
 
-    // handle edit
-    function handleEdit(e){
-        setEditedText(e.target.value)
+    const editProps = {
+        tasks, setTasks, setEditingTaskId
     }
 
-    // call back for edit save
-    function handleSave(id, editedText){
-        
-        const updatedTasks = tasks.map(
-                (task, index) => (
-                    index === id ? editedText: task
-                )
-        )
-        setTasks(updatedTasks)
-        setEditingTaskId(null)
-        setEditedText('')
-    
-    }
 
     return(
         <div>
@@ -61,12 +48,7 @@ export default function ToDo(){
                 <li key={id}>
                     {
                         editingTaskId===id ? 
-                            (
-                                <>
-                                <input value={editedText} onChange={handleEdit}/>
-                                <button onClick={()=> handleSave(id, editedText)}>save</button>
-                            </>
-                            )
+                            <EditTodoItem id={id} tasks={tasks} setEditingTaskId={setEditingTaskId} setTasks={setTasks}/>
                         :
                       (
                         <>
