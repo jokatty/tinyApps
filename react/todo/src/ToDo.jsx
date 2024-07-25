@@ -1,6 +1,8 @@
 
 import {useState} from 'react';
 import EditTodoItem from './EditTodoItem'
+import './ToDo.css'
+
 
 export default function ToDo(){
     const [tasks, setTasks] = useState(['interview', 'read'])
@@ -29,13 +31,8 @@ export default function ToDo(){
         setEditingTaskId(id)
     }
 
-    const editProps = {
-        tasks, setTasks, setEditingTaskId
-    }
-
-
     return(
-        <div>
+        <div className='main'>
             <h1>To do list</h1>
             <input type="text"
                 value={newTask}
@@ -52,7 +49,7 @@ export default function ToDo(){
                         :
                       (
                         <>
-                            <span>{task}</span>
+                            <span className='items'>{task}</span>
                             <button onClick={()=> deleteItem(id)}>delete</button>
                             <button onClick={()=> updateTask(id)}>update</button>
                         </>
