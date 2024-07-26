@@ -1,14 +1,12 @@
-import React, { useContext} from "react";
-import { BgColorContext } from "./ToDo";
+import React from "react";
 
 
 export default function Task({taskProps, id, task}){
-    const bgColor = useContext(BgColorContext)
 
     return (
         <>
             <span className='items'>{task}</span>
-            <button onClick={()=> taskProps.deleteItem(id)} style={{background:bgColor}}>delete</button>
+            <button onClick={()=> taskProps.deleteItem(id)} >delete</button>
             <button onClick={()=> taskProps.updateTask(id)}>update</button>
         </>
     )
